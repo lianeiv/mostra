@@ -2,54 +2,64 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <title>KILLER</title>
 
-<title>KILLER</title>
+    <link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" href="css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Special+Elite&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="container">
+    <main class="hero">
 
-<h1 class="logo">
-KILLER
-</h1>
+        <div class="ornament"></div>
 
-<div id="envelope">
+        <h1 class="logo">
+            KILLER
+        </h1>
 
-<div class="hint">
-Clique para abrir
-</div>
+        <div class="ornament bottom"></div>
 
-<div class="envelope-front"></div>
+        <div id="envelope-container">
 
-<div class="letter">
+            <div class="click-text">
+                Clique para abrir
+            </div>
 
-<div class="letter-content">
+            <div class="letter">
 
-<p id="typed-text"></p>
+                <div class="paper">
 
-</div>
+                    <p id="typed-text"></p>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<a
-id="startBtn"
-href="suspeitas.html">
-INICIAR INVESTIGAÇÃO
-</a>
+            <div id="envelope">
 
-</div>
+                <div class="flap left"></div>
+                <div class="flap right"></div>
+                <div class="flap bottom"></div>
 
-<script src="js/home.js"></script>
+                <div class="seal">
+                    K
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="suspeitas.html" id="startBtn">
+            INICIAR INVESTIGAÇÃO
+        </a>
+
+    </main>
+
+    <script src="js/home.js"></script>
 
 </body>
 

@@ -1,51 +1,52 @@
-const envelope =
-document.getElementById("envelope");
+const container =
+document.getElementById("envelope-container");
 
 const text =
 document.getElementById("typed-text");
 
-const startBtn =
+const button =
 document.getElementById("startBtn");
 
-const mensagem = `
+button.style.display = "none";
 
-Querido telespectador,
+const mensagem = `Querido telespectador,
 
-Se você está lendo esta carta, significa que o Professor Daniel está morto. Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
+Se você está lendo esta carta,
+significa que o Professor Daniel está morto.
+Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
 
-A partir deste momento, a investigação está em suas mãos. Analise os depoimentos, examine as pistas, conecte os fatos e questione tudo o que encontrar.
+A partir deste momento,
+a investigação está em suas mãos.
+Analise os depoimentos,
+examine as pistas,
+conecte os fatos e
+questione tudo o que encontrar.
 
-Descubra quem matou Daniel.
+Descubra quem matou Daniel.`;
 
+container.addEventListener("click", () => {
 
-`;
+    container.classList.add("open");
 
-startBtn.style.display = "none";
+    let i = 0;
 
-envelope.addEventListener("click", () => {
+    function escrever(){
 
-envelope.classList.add("open");
+        if(i < mensagem.length){
 
-let i = 0;
+            text.innerHTML += mensagem.charAt(i);
 
-function escrever(){
+            i++;
 
-if(i < mensagem.length){
+            setTimeout(escrever,25);
 
-text.innerHTML += mensagem.charAt(i);
+        }else{
 
-i++;
+            button.style.display = "inline-block";
 
-setTimeout(escrever,25);
+        }
+    }
 
-}else{
-
-startBtn.style.display="inline-block";
-
-}
-
-}
-
-setTimeout(escrever,800);
+    setTimeout(escrever,1000);
 
 },{once:true});
