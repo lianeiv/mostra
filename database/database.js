@@ -1,6 +1,6 @@
 const sqlite3 = require("sqlite3").verbose();
 
-const db = new sqlite3.Database("./database/dados.db");
+const db = new sqlite3.Database("./database/killer.db");
 
 db.serialize(() => {
   db.run(`

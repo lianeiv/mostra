@@ -16,27 +16,24 @@ app.get("/", (req, res) => {
 });
 
 app.post("/votar", (req, res) => {
-
   const { suspeita } = req.body;
 
   db.run(
     "INSERT INTO votos (suspeita) VALUES (?)",
     [suspeita],
     (err) => {
-
       if (err) {
         return res.status(500).json(err);
       }
 
       res.json({
-        sucesso: true
+        sucesso: true,
       });
     }
   );
 });
 
 app.get("/resultado", (req, res) => {
-
   db.all(
     `
     SELECT
@@ -47,7 +44,6 @@ app.get("/resultado", (req, res) => {
     `,
     [],
     (err, rows) => {
-
       if (err) {
         return res.status(500).json(err);
       }
