@@ -44,6 +44,10 @@
 
             <p><strong>Motivação:</strong> Informação não disponível.</p>
 
+            <button class="vote-btn" onclick="votar('Beatriz')">
+                ACUSAR
+            </button>
+
         </div>
 
     </div>
@@ -63,6 +67,10 @@
             <p><strong>Identificação:</strong> Lenço branco / guardanapo</p>
 
             <p><strong>Motivação:</strong> Conhecida pela imagem de "boa moça", mas sua proximidade com a vítima desperta suspeitas.</p>
+
+            <button class="vote-btn" onclick="votar('Cecilia')">
+                ACUSAR
+            </button>
 
         </div>
 
@@ -84,6 +92,10 @@
 
             <p><strong>Motivação:</strong> Profissional séria e observadora, acompanhava de perto todos os assuntos relacionados à vítima.</p>
 
+            <button class="vote-btn" onclick="votar('Malu')">
+                ACUSAR
+            </button>
+
         </div>
 
     </div>
@@ -103,6 +115,10 @@
             <p><strong>Identificação:</strong> Corda</p>
 
             <p><strong>Motivação:</strong> Tinha raiva do professor, pois acreditava que ele roubava sua cartela de clientes.</p>
+
+            <button class="vote-btn" onclick="votar('Mia')">
+                ACUSAR
+            </button>
 
         </div>
 
@@ -124,6 +140,10 @@
 
             <p><strong>Motivação:</strong> Informação não disponível.</p>
 
+            <button class="vote-btn" onclick="votar('Jordana')">
+                ACUSAR
+            </button>
+
         </div>
 
     </div>
@@ -144,11 +164,33 @@
 
             <p><strong>Motivação:</strong> Deseja a morte do sobrinho para se tornar a única herdeira da família, pois enfrenta dificuldades financeiras.</p>
 
+            <button class="vote-btn" onclick="votar('Rosalinda')">
+                ACUSAR
+            </button>
+
         </div>
 
     </div>
 
 </main>
+
+<div id="resultadoModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="resultadoTitulo"></h2>
+
+        <p id="resultadoTexto"></p>
+
+        <button onclick="fecharModal()">
+            FECHAR
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/votacao.js"></script>
 
 </body>
 
