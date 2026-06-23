@@ -7,20 +7,20 @@ document.getElementById("typed-text");
 const startBtn =
 document.getElementById("startBtn");
 
-startBtn.style.display = "none";
-
 const mensagem = `
-Professor Daniel está morto.
 
-Seis suspeitas.
-Seis histórias.
+Querido telespectador,
 
-A verdade encontra-se escondida
-entre versões conflitantes.
+Se você está lendo esta carta, significa que o Professor Daniel está morto. Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
 
-A investigação agora está
-em suas mãos.
+A partir deste momento, a investigação está em suas mãos. Analise os depoimentos, examine as pistas, conecte os fatos e questione tudo o que encontrar.
+
+Descubra quem matou Daniel.
+
+
 `;
+
+startBtn.style.display = "none";
 
 envelope.addEventListener("click", () => {
 
@@ -28,7 +28,7 @@ envelope.classList.add("open");
 
 let i = 0;
 
-function escrever() {
+function escrever(){
 
 if(i < mensagem.length){
 
@@ -36,16 +36,16 @@ text.innerHTML += mensagem.charAt(i);
 
 i++;
 
-setTimeout(escrever, 30);
+setTimeout(escrever,25);
 
 }else{
 
-startBtn.style.display = "inline-block";
+startBtn.style.display="inline-block";
 
 }
 
 }
 
-setTimeout(escrever, 1000);
+setTimeout(escrever,800);
 
-},{ once:true });
+},{once:true});
