@@ -1,11 +1,7 @@
-:root {
-
-    --cream: #f6f0e4;
-    --paper: #eadcc3;
-    --wine: #7a0000;
-    --wine-dark: #580000;
-    --shadow: rgba(0,0,0,.18);
-
+:root{
+    --bg:#fff8ef;
+    --wine:#8b0000;
+    --gold:#eadcc3;
 }
 
 *{
@@ -15,334 +11,159 @@
 }
 
 body{
-
     min-height:100vh;
-
-    background:
-    radial-gradient(circle at center,
-    #faf5eb,
-    #f3ead8);
-
+    background:var(--bg);
     display:flex;
     justify-content:center;
     align-items:center;
-
     overflow-x:hidden;
 }
 
 .hero{
-
     width:100%;
-    max-width:1200px;
-
+    max-width:1400px;
     display:flex;
     flex-direction:column;
     align-items:center;
-
-    padding:30px;
+    padding:40px;
 }
 
 .logo{
-
-    font-family:
-    'Cormorant Garamond',
-    serif;
-
-    color:#8b0000;
-
+    font-family:'Cormorant Garamond', serif;
+    color:var(--wine);
     font-size:8rem;
-
     font-weight:700;
-
     letter-spacing:8px;
-
-    margin-bottom:10px;
-}
-
-.ornament{
-
-    width:320px;
-    height:2px;
-
-    background:#9e1b1b;
-
-    position:relative;
-
     margin-bottom:20px;
 }
 
-.ornament::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    background:#f6f0e4;
-
-    color:#9e1b1b;
-
-    padding:0 12px;
-}
-
-.bottom{
-
-    margin-top:10px;
-    margin-bottom:50px;
-}
-
 #envelope-container{
-
     position:relative;
-
     width:900px;
     height:900px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 
 .click-text{
+    position:absolute;
+    top:-45px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Special Elite', cursive;
+    color:#7a0000;
+    font-size:16px;
+    letter-spacing:2px;
+    z-index:50;
+    animation:pulse 1.6s infinite;
+}
 
+#envelope{
+    position:absolute;
+    width:900px;
+    height:900px;
+    cursor:pointer;
+    z-index:10;
+    transition:all .8s ease;
+}
+
+#envelope img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+#paper{
+    position:absolute;
+    width:900px;
+    height:900px;
+    left:0;
+    top:0;
+
+    opacity:0;
+    transform:translateY(120px) scale(.9);
+
+    transition:1s ease;
+
+    z-index:20;
+}
+
+#paper img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.paper-content{
     position:absolute;
 
-    top:-20px;
+    top:115px;
+    left:165px;
 
-    font-family:
-    'Special Elite',
-    monospace;
+    width:570px;
+    height:620px;
 
-    color:#666;
+    color:#222;
 
-    animation:pulse 2s infinite;
+    font-family:'Special Elite', cursive;
+    font-size:18px;
+    line-height:2.05;
+}
+
+#typed-text{
+    white-space:pre-line;
+}
+
+#envelope-container.open #paper{
+    opacity:1;
+    transform:translateY(-40px) scale(1);
+}
+
+#startBtn{
+    margin-top:40px;
+
+    background:linear-gradient(#8b0000,#6a0000);
+
+    color:#eadcc3;
+
+    text-decoration:none;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:2rem;
+
+    padding:18px 60px;
+
+    border-radius:999px;
+
+    border:2px solid #c8ab77;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.5s;
+}
+
+#startBtn.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+#startBtn:hover{
+    transform:translateY(-3px);
 }
 
 @keyframes pulse{
 
-    0%{opacity:.4}
-    50%{opacity:1}
-    100%{opacity:.4}
-}
-
-.letter{
-
-    position:absolute;
-
-    z-index:2;
-
-    transform:
-    translateY(220px);
-
-    opacity:0;
-
-    transition:1.5s ease;
-}
-
-.paper{
-
-    width:650px;
-    min-height:700px;
-
-    background:
-    linear-gradient(
-    rgba(255,255,255,.05),
-    rgba(0,0,0,.03)
-    ),
-    var(--paper);
-
-    border:18px solid #e4d1af;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 20px 40px rgba(0,0,0,.15);
-
-    padding:
-    90px
-    70px;
-}
-
-.paper::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    border-radius:30px;
-
-    background:
-    radial-gradient(circle,
-    transparent 96%,
-    rgba(255,255,255,.15) 100%);
-}
-
-#typed-text{
-
-    font-family:
-    'Special Elite',
-    monospace;
-
-    font-size:1.25rem;
-
-    line-height:2;
-
-    color:#222;
-
-    white-space:pre-line;
-}
-
-#envelope{
-
-    width:820px;
-    height:500px;
-
-    position:absolute;
-
-    bottom:60px;
-
-    z-index:4;
-}
-
-.flap{
-
-    position:absolute;
-
-    background:
-    url("../images/textura-envelope.jpg");
-
-    background-size:cover;
-
-    box-shadow:
-    inset 0 0 25px rgba(0,0,0,.3);
-}
-
-.left{
-
-    width:50%;
-    height:100%;
-
-    left:0;
-
-    clip-path:
-    polygon(0 0,100% 50%,0 100%);
-}
-
-.right{
-
-    width:50%;
-    height:100%;
-
-    right:0;
-
-    clip-path:
-    polygon(100% 0,0 50%,100% 100%);
-}
-
-.bottom{
-
-    width:100%;
-    height:100%;
-
-    clip-path:
-    polygon(0 100%,50% 40%,100% 100%);
-}
-
-.seal{
-
-    position:absolute;
-
-    left:50%;
-    bottom:70px;
-
-    transform:translateX(-50%);
-
-    width:110px;
-    height:110px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-    #9d0000,
-    #6f0000
-    );
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:#e8d7b3;
-
-    font-family:
-    'Cormorant Garamond',
-    serif;
-
-    font-size:3rem;
-
-    z-index:10;
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,.25);
-}
-
-#startBtn{
-
-    display:none;
-
-    margin-top:70px;
-
-    background:
-    linear-gradient(
-    #8f0000,
-    #650000
-    );
-
-    color:#e9d6af;
-
-    text-decoration:none;
-
-    font-family:
-    'Cormorant Garamond',
-    serif;
-
-    font-size:2rem;
-
-    letter-spacing:2px;
-
-    padding:
-    18px
-    60px;
-
-    border-radius:50px;
-
-    border:3px solid #cba76b;
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,.2);
-
-    transition:.3s;
-}
-
-#startBtn:hover{
-
-    transform:
-    translateY(-4px);
-}
-
-.open .letter{
-
-    opacity:1;
-
-    transform:
-    translateY(-40px);
+    0%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.5;
+    }
 }

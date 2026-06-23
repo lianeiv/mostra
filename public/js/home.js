@@ -1,52 +1,54 @@
-const container =
-document.getElementById("envelope-container");
+const envelope = document.getElementById("envelope");
+const container = document.getElementById("envelope-container");
+const typedText = document.getElementById("typed-text");
+const startBtn = document.getElementById("startBtn");
 
-const text =
-document.getElementById("typed-text");
+const texto = `Querido telespectador,
 
-const button =
-document.getElementById("startBtn");
+Se você está lendo esta carta, significa que o Professor Daniel está morto. Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
 
-button.style.display = "none";
-
-const mensagem = `Querido telespectador,
-
-Se você está lendo esta carta,
-significa que o Professor Daniel está morto.
-Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
-
-A partir deste momento,
-a investigação está em suas mãos.
-Analise os depoimentos,
-examine as pistas,
-conecte os fatos e
-questione tudo o que encontrar.
+A partir deste momento, a investigação está em suas mãos. Analise os depoimentos, examine as pistas, conecte os fatos e questione tudo o que encontrar.
 
 Descubra quem matou Daniel.`;
 
-container.addEventListener("click", () => {
+let aberto = false;
+
+envelope.addEventListener("click", () => {
+
+    if(aberto) return;
+
+    aberto = true;
 
     container.classList.add("open");
 
-    let i = 0;
+    document.querySelector(".click-text").style.display = "none";
 
-    function escrever(){
+    typedText.innerHTML = "";
 
-        if(i < mensagem.length){
+    setTimeout(() => {
 
-            text.innerHTML += mensagem.charAt(i);
+        let i = 0;
 
-            i++;
+        function escrever(){
 
-            setTimeout(escrever,25);
+            if(i < texto.length){
 
-        }else{
+                typedText.innerHTML += texto.charAt(i);
 
-            button.style.display = "inline-block";
+                i++;
+
+                setTimeout(escrever, 22);
+
+            }else{
+
+                startBtn.classList.add("show");
+
+            }
 
         }
-    }
 
-    setTimeout(escrever,1000);
+        escrever();
 
-},{once:true});
+    }, 900);
+
+});
