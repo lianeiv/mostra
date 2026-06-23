@@ -1,17 +1,11 @@
 const envelope = document.getElementById("envelope");
-
 const container = document.getElementById("envelope-container");
-
 const typedText = document.getElementById("typed-text");
-
 const startBtn = document.getElementById("startBtn");
-
-const clickText = document.querySelector(".click-text");
 
 const texto = `Querido telespectador,
 
 Se você está lendo esta carta, significa que o Professor Daniel está morto. Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
-
 A partir deste momento, a investigação está em suas mãos. Analise os depoimentos, examine as pistas, conecte os fatos e questione tudo o que encontrar.
 
 Descubra quem matou Daniel.`;
@@ -23,8 +17,6 @@ envelope.addEventListener("click", () => {
     if(aberto) return;
 
     aberto = true;
-
-    clickText.style.display = "none";
 
     container.classList.add("open");
 
@@ -42,16 +34,17 @@ envelope.addEventListener("click", () => {
 
                 i++;
 
-                setTimeout(escrever, 25);
+                setTimeout(escrever,20);
 
             }else{
 
                 startBtn.classList.add("show");
+
             }
         }
 
         escrever();
 
-    }, 800);
+    },500);
 
 });
