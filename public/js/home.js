@@ -1,7 +1,12 @@
 const envelope = document.getElementById("envelope");
+
 const container = document.getElementById("envelope-container");
+
 const typedText = document.getElementById("typed-text");
+
 const startBtn = document.getElementById("startBtn");
+
+const clickText = document.querySelector(".click-text");
 
 const texto = `Querido telespectador,
 
@@ -19,9 +24,9 @@ envelope.addEventListener("click", () => {
 
     aberto = true;
 
-    container.classList.add("open");
+    clickText.style.display = "none";
 
-    document.querySelector(".click-text").style.display = "none";
+    container.classList.add("open");
 
     typedText.innerHTML = "";
 
@@ -37,18 +42,16 @@ envelope.addEventListener("click", () => {
 
                 i++;
 
-                setTimeout(escrever, 22);
+                setTimeout(escrever, 25);
 
             }else{
 
                 startBtn.classList.add("show");
-
             }
-
         }
 
         escrever();
 
-    }, 900);
+    }, 800);
 
 });
