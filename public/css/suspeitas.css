@@ -35,27 +35,19 @@ body{
 .suspects-grid{
     max-width:1400px;
     margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(380px,1fr));
-
-    gap:35px;
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+    gap:45px;
 }
 
 .suspect-card{
     background:#fff;
-
     border:3px solid #d8c29d;
-
     border-radius:25px;
-
     overflow:hidden;
-
     box-shadow:0 15px 30px rgba(0,0,0,.08);
-
     transition:.3s;
+    padding:20px;
 }
 
 .suspect-card:hover{
@@ -67,34 +59,33 @@ body{
     height:360px;
     object-fit:cover;
     display:block;
+    border-radius:15px;
 }
 
 .suspect-card h3{
     font-family:'Cormorant Garamond', serif;
-    font-size:2rem;
+    font-size:2.2rem;
     text-align:center;
-    margin:25px 20px 20px;
+    margin:25px 20px 15px;
     color:#1f1f1f;
 }
 
 .card-info{
-    padding:30px 35px 35px;
+    padding:10px 15px 20px;
 }
 
 .card-info p{
-    margin-bottom:14px;
-
+    margin-bottom:16px;
     font-family:'Special Elite', cursive;
-
-    font-size:1rem;
-
-    line-height:1.7;
-
+    font-size:1.05rem;
+    line-height:1.8;
     color:#2b211a;
-
-    word-break:break-word;
-
+    word-break:normal;
     overflow-wrap:break-word;
+}
+
+.card-info p:last-child {
+    margin-bottom: 0;
 }
 
 .card-info strong{
@@ -102,67 +93,64 @@ body{
 }
 
 @media(max-width:768px){
-
     body{
         padding:20px 12px;
     }
-
     .logo{
         font-size:3.8rem;
     }
-
     .titulo{
         font-size:1.2rem;
         margin-bottom:30px;
     }
-
     .suspects-grid{
         grid-template-columns:1fr;
-        gap:25px;
+        gap:35px;
     }
-
+    .suspect-card{
+        padding:15px;
+    }
     .suspect-card img{
         height:320px;
     }
-
     .suspect-card h3{
-        font-size:1.8rem;
-        margin:20px 15px;
+        font-size:1.9rem;
+        margin:20px 15px 10px;
     }
-
     .card-info{
-        padding:25px;
+        padding:5px 10px 15px;
     }
-
     .card-info p{
-        font-size:.9rem;
-        line-height:1.6;
+        font-size:.95rem;
+        line-height:1.7;
+        margin-bottom:12px;
     }
 }
 
 @media(max-width:480px){
-
     .logo{
         font-size:3rem;
     }
-
     .titulo{
         font-size:1rem;
     }
-
+    .suspects-grid{
+        gap:25px;
+    }
+    .suspect-card{
+        padding:12px;
+    }
     .suspect-card img{
         height:280px;
     }
-
     .suspect-card h3{
-        font-size:1.6rem;
+        font-size:1.7rem;
     }
-
     .card-info{
-        padding:20px;
+        padding:5px 5px 10px;
     }
-
     .card-info p{
-        font-size:.85rem;
+        font-size:.9rem;
+        line-height:1.6;
     }
 }
