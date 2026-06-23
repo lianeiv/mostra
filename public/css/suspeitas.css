@@ -11,6 +11,8 @@
 
 body{
     background:#faf7f0;
+    background-image:
+    radial-gradient(circle at top, rgba(139,0,0,.05), transparent 40%);
     min-height:100vh;
     padding:40px 20px;
 }
@@ -26,34 +28,32 @@ body{
     text-align:center;
     margin-top:10px;
     margin-bottom:50px;
-
     font-family:'Special Elite', cursive;
     font-size:1.6rem;
 }
 
 .suspects-grid{
-    max-width:1200px;
+    max-width:1400px;
     margin:auto;
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+    repeat(auto-fit,minmax(380px,1fr));
 
-    gap:30px;
+    gap:35px;
 }
 
 .suspect-card{
-
-    background:white;
+    background:#fff;
 
     border:3px solid #d8c29d;
 
-    border-radius:20px;
+    border-radius:25px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
 
     transition:.3s;
 }
@@ -64,58 +64,105 @@ body{
 
 .suspect-card img{
     width:100%;
-    height:320px;
+    height:360px;
     object-fit:cover;
+    display:block;
 }
 
 .suspect-card h3{
     font-family:'Cormorant Garamond', serif;
     font-size:2rem;
     text-align:center;
-    margin-top:20px;
+    margin:25px 20px 20px;
+    color:#1f1f1f;
 }
 
-.suspect-card span{
-    display:block;
-    text-align:center;
-    margin-top:5px;
-    margin-bottom:20px;
-    color:#555;
+.card-info{
+    padding:30px 35px 35px;
 }
 
-.suspect-card a{
+.card-info p{
+    margin-bottom:14px;
 
-    display:block;
+    font-family:'Special Elite', cursive;
 
-    width:85%;
+    font-size:1rem;
 
-    margin:0 auto 25px;
+    line-height:1.7;
 
-    text-align:center;
+    color:#2b211a;
 
-    background:#8b0000;
+    word-break:break-word;
 
-    color:#fff;
+    overflow-wrap:break-word;
+}
 
-    text-decoration:none;
-
-    padding:14px;
-
-    border-radius:999px;
-
-    font-family:'Cormorant Garamond', serif;
-
-    font-size:1.2rem;
+.card-info strong{
+    color:var(--wine);
 }
 
 @media(max-width:768px){
 
+    body{
+        padding:20px 12px;
+    }
+
     .logo{
-        font-size:3.5rem;
+        font-size:3.8rem;
+    }
+
+    .titulo{
+        font-size:1.2rem;
+        margin-bottom:30px;
+    }
+
+    .suspects-grid{
+        grid-template-columns:1fr;
+        gap:25px;
     }
 
     .suspect-card img{
-        height:260px;
+        height:320px;
     }
 
+    .suspect-card h3{
+        font-size:1.8rem;
+        margin:20px 15px;
+    }
+
+    .card-info{
+        padding:25px;
+    }
+
+    .card-info p{
+        font-size:.9rem;
+        line-height:1.6;
+    }
+}
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:3rem;
+    }
+
+    .titulo{
+        font-size:1rem;
+    }
+
+    .suspect-card img{
+        height:280px;
+    }
+
+    .suspect-card h3{
+        font-size:1.6rem;
+    }
+
+    .card-info{
+        padding:20px;
+    }
+
+    .card-info p{
+        font-size:.85rem;
+    }
 }

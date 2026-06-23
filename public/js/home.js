@@ -6,7 +6,7 @@ const startBtn = document.getElementById("startBtn");
 const texto = `Querido telespectador,
 
 Se você está lendo esta carta, significa que o Professor Daniel está morto. Há seis suspeitas, e cada uma delas tem sua própria versão dos acontecimentos.
-A partir deste momento, a investigação está em suas mãos. Analise os depoimentos, examine as pistas, conecte os fatos e questione tudo o que encontrar.
+A partir deste momento, a investigação está em suas mãos.
 
 Descubra quem matou Daniel.`;
 
